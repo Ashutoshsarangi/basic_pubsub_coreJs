@@ -1,0 +1,21 @@
+<html>
+<title></title>
+
+<body>
+  <h1>Hello World</h1>
+  <button type="button" onclick="publishData()">Publish Data</button><br>
+  <script src="./pubSub.js"></script>
+  <script src="./app.js"></script>
+  <script>
+    //This code Executes First
+    //when ever we publish it automaically fires the subscribe method.
+    EventManager.subscribe('useradded', function (data) {
+      console.log(data)
+    });
+    function publishData() {
+      EventManager.publish('useradded', { name: 'Ashu', age: 123 });
+    }
+  </script>
+</body>
+
+</html>
